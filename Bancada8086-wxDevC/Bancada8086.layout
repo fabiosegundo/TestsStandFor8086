@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="default" />
+	<File name="Bancada8086Frm.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2229" topLine="63" />
+		</Cursor>
+	</File>
+	<File name="Bancada8086Frm.wxform" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Bancada8086Frm.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="16586" topLine="50" />
+		</Cursor>
+	</File>
+	<File name="Bancada8086App.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="405" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Bancada8086App.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="666" topLine="12" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>
+[Editor_4]
+CursorCol=10
+CursorRow=60
+TopLine=58
+LeftChar=1
+[Editor_3]
+CursorCol=29
+CursorRow=215
+TopLine=199
+LeftChar=1
+[Editor_0]
+CursorCol=1
+CursorRow=11
+TopLine=1
+LeftChar=1
