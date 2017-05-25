@@ -11,7 +11,7 @@ Inspired in the Abacus simulator created by Prof. Roberto Ziller at EEL/UFSC.
 Program under GNU GPL v3 license.
 
 Two implementations are available:
- - Compiled with MinWGC in wxDev with wx window library. 
+ - Compiled with MingWGCC in wxDev with wx window library. 
  - Compiled with MS Visual C in MS Visual Studio Express 2004.
 
 See EMU8086 documentation to know how to emulate communication with the device.
