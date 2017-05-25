@@ -3,12 +3,10 @@
 Tests Stand for 8086 version 1.2
 
 Program of a device wich simulates a test bench with leds, keys, buttons and displays for interaction to the 8086 microprocessor emulator (EMU8086).
+
 Created for the Microprocessors courses: DAS5332 e BLU3302 at Universidade Federal de Santa Catarina (UFSC).
+
 Inspired in the Abacus simulator created by Prof. Roberto Ziller at EEL/UFSC.
-Designers and developers:
- -  Fabio Rafael Segundo <fabio.segundo@ufsc.br> UFSC Blumenau
- -  João Paulo Bodanese <joao.bodanese@gmail.com> PPGEAS/UFSC
- -  Werner Krauss Junior <werner.kraus@ufsc.br> DAS/UFSC
 
 Program under GNU GPL v3 license.
 
@@ -17,6 +15,7 @@ Two implementations are available:
  - Compiled with MS Visual C in MS Visual Studio Express 2004.
 
 See EMU8086 documentation to know how to emulate communication with the device.
+
 
 Portuguese:
 
