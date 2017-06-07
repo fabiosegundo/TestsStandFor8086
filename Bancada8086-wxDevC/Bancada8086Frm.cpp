@@ -95,7 +95,7 @@ Bancada8086Frm::Bancada8086Frm(wxWindow *parent, wxWindowID id, const wxString &
    WriteIObyte(LED_PORT, 0);
 	UpdateLeds(0);
 	
-   // Inicia o evento TIMER_ID que faz a leitura periÛdica do bus de dados(emu8086.io)
+   // Inicia o evento TIMER_ID que faz a leitura peri√≥dica do bus de dados(emu8086.io)
 	m_timer.Start(TIMER_ID);
 }
 
@@ -296,26 +296,26 @@ void Bancada8086Frm::WxButton4Click(wxCommandEvent& event)
 void Bancada8086Frm::WxButton5Click(wxCommandEvent& event)
 {
    char buf[1500];
-   /*strcpy(buf, "Bancada de Testes vers„o 1.1wx\n\n");
-   strcat(buf, "Programa que simula uma bancada com chaves, leds e interrupÁıes\n");
-   strcat(buf, "para interaÁ„o com o emulador de processador 8086 (EMU8086).\n\n");
+   /*strcpy(buf, "Bancada de Testes vers√£o 1.1wx\n\n");
+   strcat(buf, "Programa que simula uma bancada com chaves, leds e interrup√ß√µes\n");
+   strcat(buf, "para intera√ß√£o com o emulador de processador 8086 (EMU8086).\n\n");
    strcat(buf, "Criado para a disciplina Microprocessadores: DAS5332 e BLU3302\n");
    strcat(buf, "da Universidade Federal de Santa Catarina.\n");
    strcat(buf, "Inspirado no simulador Abacus do Prof. Roberto Ziller EEL/UFSC.\n\n");
    strcat(buf, "Projetistas/desenvolvedores:\n");
    strcat(buf, "  Fabio Rafael Segundo <fabio.segundo@ufsc.br> UFSC Blumenau\n");
-   strcat(buf, "  Jo„o Paulo Bodanese <joao.bodanese@gmail.com> PPGEAS/UFSC\n");
+   strcat(buf, "  Jo√£o Paulo Bodanese <joao.bodanese@gmail.com> PPGEAS/UFSC\n");
    strcat(buf, "  Werner Krauss Junior <werner.kraus@ufsc.br> DAS/UFSC\n\n");
-   strcat(buf, "Programa sob licenÁa GNU GPL v3.\n");*/
+   strcat(buf, "Programa sob licen√ßa GNU GPL v3.\n");*/
    strcpy(buf, "Tests Stand for 8086 version 1.2-wx\n\n");
    strcat(buf, "Program wich simulates a test bench with leds, keys, buttons and\n");
    strcat(buf, "displays for interaction to the 8086 microprocessor emulator (EMU8086).\n\n");
-   strcat(buf, "Created for the Microprocessors courses: DAS5332 e BLU3302\n");
+   strcat(buf, "Created for the Microprocessors courses: DAS5332 and BLU3302\n");
    strcat(buf, "at Universidade Federal de Santa Catarina (UFSC).\n");
    strcat(buf, "Inspired in the Abacus simulator created by Prof. Roberto Ziller at EEL/UFSC.\n\n");
    strcat(buf, "Designers/developers:\n");
    strcat(buf, "  Fabio Rafael Segundo <fabio.segundo@ufsc.br> UFSC Blumenau;\n");
-   strcat(buf, "  Jo„o Paulo Bodanese <joao.bodanese@gmail.com> PPGEAS/UFSC;\n");
+   strcat(buf, "  Jo√£o Paulo Bodanese <joao.bodanese@gmail.com> PPGEAS/UFSC;\n");
    strcat(buf, "  Werner Krauss Junior <werner.kraus@ufsc.br> DAS/UFSC.\n\n");
    strcat(buf, "Program under GNU GPL v3 license.\n");
    
@@ -587,7 +587,7 @@ void Bancada8086Frm::WriteIOword(long lPORT_NUM, unsigned int iValue)
 
 		fclose(fIo);
 
-		// InterrupÁ„o
+		// Interrup√ß√£o
 
 		ct=0;
 		fInt = fopen(sINT_FILE, "wb+");
@@ -691,7 +691,7 @@ int Bancada8086Frm::ReadIniFile()
 		   Setting[cts]=0;
 
          // se a configuracao for EMUPORT ou HW_INTERRUPT_FILE atribui valores
-		   // se os dois valores j· foram obtidos termina a leitura do arquivo ini
+		   // se os dois valores j√° foram obtidos termina a leitura do arquivo ini
 		   // ok int a=sscanf_s(line, "%s=%s", &Setting, &Value);
          //if (sscanf_s(line, "%[^=]=%s", &Setting, &Value)==2) {
 		   if(strcmp(Setting,"EMUPORT")==0) {
@@ -711,7 +711,7 @@ int Bancada8086Frm::ReadIniFile()
 
 
 //========================================================================================================
-// Exemplo para interrupÁ„o 0x90
+// Exemplo para interrup√ß√£o 0x90
 #if 0
 
 ; interrupt vector (memory from 00000h to 00400h)
