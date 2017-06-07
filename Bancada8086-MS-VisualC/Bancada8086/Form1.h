@@ -1,4 +1,4 @@
-// Jo„o Paulo Bodanese <joao.bodanese@gmail.com>
+// Jo√£o Paulo Bodanese <joao.bodanese@gmail.com>
 // Fabio Rafael Segundo <fabio.segundo@gmail.com>
 
 #pragma once
@@ -90,7 +90,7 @@ namespace Bancada8086 {
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
-		// Vari·veis
+		// Vari√°veis
 		Thread^ demoThread;
 		bool running;
 		unsigned char switchVal;
@@ -1089,26 +1089,26 @@ private: System::Windows::Forms::Button^  btnSobre;
 
 	private: System::Void btnSobre_Click(System::Object^  sender, System::EventArgs^  e) {
    char buf[1500];
-   /*strcpy_s(buf, "Bancada de Testes vers„o 1.1mvc\n\n");
-   strcat_s(buf, "Programa que simula uma bancada com chaves, leds e interrupÁıes\n");
-   strcat_s(buf, "para interaÁ„o com o emulador de processador 8086 (EMU8086).\n\n");
+   /*strcpy_s(buf, "Bancada de Testes vers√£o 1.1mvc\n\n");
+   strcat_s(buf, "Programa que simula uma bancada com chaves, leds e interrup√ß√µes\n");
+   strcat_s(buf, "para intera√ß√£o com o emulador de processador 8086 (EMU8086).\n\n");
    strcat_s(buf, "Criado para a disciplina Microprocessadores: DAS5332 e BLU3302\n");
    strcat_s(buf, "da Universidade Federal de Santa Catarina.\n");
    strcat_s(buf, "Inspirado no simulador Abacus do Prof. Roberto Ziller no EEL/UFSC.\n\n");
    strcat_s(buf, "Projetistas/desenvolvedores:\n");
    strcat_s(buf, "  Fabio Rafael Segundo <fabio.segundo@ufsc.br> UFSC Blumenau\n");
-   strcat_s(buf, "  Jo„o Paulo Bodanese <joao.bodanese@gmail.com> PPGEAS/UFSC\n");
+   strcat_s(buf, "  Jo√£o Paulo Bodanese <joao.bodanese@gmail.com> PPGEAS/UFSC\n");
    strcat_s(buf, "  Werner Krauss Junior <werner.kraus@ufsc.br> DAS/UFSC\n\n");
-   strcat_s(buf, "Programa sob licenÁa GNU GPL v3.\n");*/
+   strcat_s(buf, "Programa sob licen√ßa GNU GPL v3.\n");*/
    strcpy_s(buf, "Tests Stand for 8086 version 1.2-mvc\n\n");
    strcat_s(buf, "Program wich simulates a test bench with leds, keys, buttons and\n");
    strcat_s(buf, "displays for interaction to the 8086 microprocessor emulator (EMU8086).\n\n");
-   strcat_s(buf, "Created for the Microprocessors courses: DAS5332 e BLU3302\n");
+   strcat_s(buf, "Created for the Microprocessors courses: DAS5332 and BLU3302\n");
    strcat_s(buf, "at Universidade Federal de Santa Catarina (UFSC).\n");
    strcat_s(buf, "Inspired in the Abacus simulator created by Prof. Roberto Ziller at EEL/UFSC.\n\n");
    strcat_s(buf, "Designers/developers:\n");
    strcat_s(buf, "  Fabio Rafael Segundo <fabio.segundo@ufsc.br> UFSC Blumenau;\n");
-   strcat_s(buf, "  Jo„o Paulo Bodanese <joao.bodanese@gmail.com> PPGEAS/UFSC;\n");
+   strcat_s(buf, "  Jo√£o Paulo Bodanese <joao.bodanese@gmail.com> PPGEAS/UFSC;\n");
    strcat_s(buf, "  Werner Krauss Junior <werner.kraus@ufsc.br> DAS/UFSC.\n\n");
    strcat_s(buf, "Program under GNU GPL v3 license.\n");
       MessageBox::Show(String(buf).ToString(),PROGNAME, MessageBoxButtons::OK,MessageBoxIcon::Information);
@@ -1374,7 +1374,7 @@ private: System::Windows::Forms::Button^  btnSobre;
 	  strcat_s(buf, ") ");
 	  strerror_s(str,255,errno);
 	  strcat_s(buf, str);
-	  strcat_s(buf, ". Sair da AplicaÁ„o?");
+	  strcat_s(buf, ". Sair da Aplica√ß√£o?");
       if(MessageBox::Show(String(buf).ToString(),PROGNAME, MessageBoxButtons::YesNo,MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes )
       {
          //Application::Exit();
@@ -1387,7 +1387,7 @@ private: System::Windows::Forms::Button^  btnSobre;
 	  char buf[500];
       strcpy_s(buf, "Arquivo ");
 	  strcat_s(buf, sINI_FILE);
-	  strcat_s(buf, ". n„o encontrado ou sem configuraÁ„o para EMUPORT e/ou HW_INTERRUPT_FILE. Verifique se a instalaÁ„o est· correta.");
+	  strcat_s(buf, ". n√£o encontrado ou sem configura√ß√£o para EMUPORT e/ou HW_INTERRUPT_FILE. Verifique se a instala√ß√£o est√° correta.");
       MessageBox::Show(String(buf).ToString(),L"Error", MessageBoxButtons::OK,MessageBoxIcon::Exclamation);
 	  Environment::Exit(0);
     }
@@ -1441,7 +1441,7 @@ private: System::Windows::Forms::Button^  btnSobre;
 		  Setting[cts]=0;
 
           // se a configuracao for EMUPORT ou HW_INTERRUPT_FILE atribui valores
-		  // se os dois valores j· foram obtidos termina a leitura do arquivo ini
+		  // se os dois valores j√° foram obtidos termina a leitura do arquivo ini
 		  // ok int a=sscanf_s(line, "%s=%s", &Setting, &Value);
           //if (sscanf_s(line, "%[^=]=%s", &Setting, &Value)==2) {
 		  if(strcmp(Setting,"EMUPORT")==0) {
@@ -1598,7 +1598,7 @@ private: System::Void Int0x92_Click(System::Object^  sender, System::EventArgs^ 
 
 
 //========================================================================================================
-// Exemplo para interrupÁ„o 0x90
+// Exemplo para interrup√ß√£o 0x90
 #if 0
 
 ; interrupt vector (memory from 00000h to 00400h)
