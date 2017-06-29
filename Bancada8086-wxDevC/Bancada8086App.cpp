@@ -34,42 +34,39 @@ char sINT_FILE[256]       = ".\\emu8086.hw";
 
 int main(int argc, char **argv){  
 
-  // Obtem o pid do processo para depois obter o módulo e então 
-  // o full path para localizar o emu8086.ini
-  // Considera o próprio nome do executável como nome do .ini
-  HANDLE hModuleSnap = INVALID_HANDLE_VALUE; 
-  MODULEENTRY32 me32; 
+  // Get the pid of the process to get the module name after and the full path
+  HANDLE handleModuleSnap = INVALID_HANDLE_VALUE; 
+  MODULEENTRY32 mEntry; 
  
   //  Take a snapshot of all modules in the specified process. 
-  hModuleSnap = CreateToolhelp32Snapshot( TH32CS_SNAPMODULE, GetProcessByName(EMU8086EXEFILE) ); 
-  if( hModuleSnap != INVALID_HANDLE_VALUE ) 
+  handleModuleSnap = CreateToolhelp32Snapshot( TH32CS_SNAPMODULE, GetProcessByName(EMU8086EXEFILE) ); 
+  if( handleModuleSnap != INVALID_HANDLE_VALUE ) 
   { 
     //  Set the size of the structure before using it. 
-    me32.dwSize = sizeof( MODULEENTRY32 ); 
-    //  Retrieve information about the first module, 
-    //  and exit if unsuccessful 
-    if( Module32First( hModuleSnap, &me32 ) ) 
+    mEntry.dwSize = sizeof( MODULEENTRY32 ); 
+    //  Information of the first module. If none, exit
+    if( Module32First( handleModuleSnap, &mEntry ) ) 
     { 
       do 
       {
-        if (_wcsnicmp(EMU8086EXEFILE, me32.szModule, sizeof(me32.szModule)) == 0) {
-  	       //MessageBox::Show(String(me32.szExePath).ToString(),PROGNAME, MessageBoxButtons::OK,MessageBoxIcon::Information);
-		    //errno_t err = strcpy_s(sINI_FILE,60,LPCSTR(me32.szModule));
-		    // obtem o caminho completo com nome do executável e troca a extensão por .ini
+        if (_wcsnicmp(EMU8086EXEFILE, mEntry.szModule, sizeof(mEntry.szModule)) == 0) {
+  	  //MessageBox::Show(String(mEntry.szExePath).ToString(),PROGNAME, MessageBoxButtons::OK,MessageBoxIcon::Information);
+	  //errno_t err = strcpy_s(sINI_FILE,60,LPCSTR(mEntry.szModule));
+
+	  // get the full path and exchange the extension in the name to .ini
           size_t   i;
- 		    int err = wcstombs(sINI_FILE, me32.szExePath, (size_t)60);
-		    int p_ini=strlen(sINI_FILE);
-		    sINI_FILE[p_ini-1] = 'i';
-		    sINI_FILE[p_ini-2] = 'n';
-		    sINI_FILE[p_ini-3] = 'i';
-  	       //MessageBox::Show(String(sINI_FILE).ToString(),PROGNAME, MessageBoxButtons::OK,MessageBoxIcon::Information);
-		    break;
-		  }
-	   } while( Module32Next( hModuleSnap, &me32 ) ); 
+ 	  int err = wcstombs(sINI_FILE, mEntry.szExePath, (size_t)60);
+	  int p_ini=strlen(sINI_FILE);
+	  sINI_FILE[p_ini-1] = 'i';
+	  sINI_FILE[p_ini-2] = 'n';
+	  sINI_FILE[p_ini-3] = 'i';
+  	  //MessageBox::Show(String(sINI_FILE).ToString(),PROGNAME, MessageBoxButtons::OK,MessageBoxIcon::Information);
+	  break;
+	}
+      } while( Module32Next( handleModuleSnap, &mEntry ) ); 
     }
-	CloseHandle( hModuleSnap );     // Must clean up the snapshot object!
+    CloseHandle( handleModuleSnap );
   } 
- 
   return wxEntry(argc, argv);
 }  
   
@@ -114,8 +111,7 @@ DWORD GetProcessByName(PCWSTR name)
     {
         do
         {
-            // Compare process.szExeFile based on format of name, i.e., trim file path
-            // trim .exe if necessary, etc.
+            // Compare process.szExeFile based on format of name, i.e., trim file path trim .exe if necessary, etc.
             //if (string(process.szExeFile) == string(name))
             if (_wcsnicmp(name, process.szExeFile, sizeof(process.szExeFile)) == 0)
             {
@@ -127,11 +123,6 @@ DWORD GetProcessByName(PCWSTR name)
 
     CloseHandle(snapshot);
 
-    if (pid != 0)
-    {
-         return pid; //OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
-    }
-
-    // Not found
-    return 0;
+    if (pid != 0) return pid; //OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
+    return 0; // Not found
 }
